@@ -38,11 +38,17 @@ Generic ways to create Tween:
 # Sequence
 
 mySequence = DOTween.Sequence();
+
 mySequence.Append(this.transform.DOMoveY(MoveDistance, DownDoneTime).SetRelative().SetDelay(StartWaitTime).SetEase(Ease.Linear))
+
 .Append(
+
 this.transform.DOMoveY(startPosY, UpDoneTime).SetDelay(UpWaitTime).SetEase(Ease.Linear))
+
 .SetDelay(TestValue); ;
+
 mySequence.SetLoops(-1, LoopType.Restart);
+
 
 // Grab a free Sequence to use
 Sequence mySequence = DOTween.Sequence();
@@ -58,11 +64,17 @@ mySequence.Insert(0, transform.DOScale(new Vector3(3,3,3), mySequence.Duration()
 # Re-use DOTween tweeners
 
 Tweener playerMoveUpTweener = player.transform.DOLocalMove(new Vector3(0,100,0), 0.5f, true);
+
     playerMoveUpTweener.SetEase (Ease.Linear);
+    
     playerMoveUpTweener.SetRelative (true);
+    
     playerMoveUpTweener.SetRecyclable (true);
+    
     playerMoveUpTweener.OnComplete(() => {
+    
         // some stuff
+        
     });
 
 playerMoveUpTweener.Play();
